@@ -127,9 +127,7 @@ function weather(Index) {
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data)
-                                let FarTemp=data.main.temp
-                                let Celsius=Math.floor((FarTemp-32)*(5/9));
-                                element.textContent=`Weather :${data.weather["0"].main} Temp: ${Celsius}degC `
+                                element.textContent=`Weather :${data.weather["0"].main} Temp: ${data.main.temp}DegF `
                             })
                     })
 
