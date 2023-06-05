@@ -127,7 +127,8 @@ function weather(Index) {
                             .then(response => response.json())
                             .then(data => {
                                 console.log(data)
-                                element.textContent=`Weather :${data.weather["0"].main} Temp: ${data.main.temp} DegC `
+                                let Temp=Math.round(data.main.temp-273.15)
+                                element.textContent=`Weather :${data.weather["0"].main} Temp: ${Temp} DegC `
                             })
                     })
 
